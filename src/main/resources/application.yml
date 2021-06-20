@@ -1,0 +1,23 @@
+# App name
+spring.application.name: numerical-mechanics-gateway
+
+# No SSL
+server.port: 8084
+
+# Routing
+spring.webflux.static-path-pattern: /static/**
+spring.main.allow-bean-definition-overriding: true
+spring.cloud.gateway.routes:
+  - id: numerical-mechanics-backend
+    uri: lb://NUMERICAL-MECHANICS-BACKEND
+    predicates:
+      - Path=/api/v1/authentication/**,
+             /api/v1/contents/**,
+             /api/v1/sections/**,
+             /api/v1/subsections/**
+
+  - id: storage-manager
+    uri: lb://STORAGE-MANAGER
+    predicates:
+      - Path=/api/v1/files
+
