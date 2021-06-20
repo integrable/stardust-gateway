@@ -9,10 +9,10 @@ import org.springframework.context.annotation.Bean;
 
 @EnableDiscoveryClient
 @SpringBootApplication
-public class NumericalMechanicsGatewayApplication {
+public class StardustGatewayApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(NumericalMechanicsGatewayApplication.class, args);
+        SpringApplication.run(StardustGatewayApplication.class, args);
     }
 
     @Bean
